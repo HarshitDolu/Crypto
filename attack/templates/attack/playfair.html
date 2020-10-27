@@ -1,0 +1,157 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong> The Playfair cipher was the first practical digraph substitution cipher. The scheme was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs) instead of a single alphabet.
+
+It was used for tactical purposes by British forces in the Second Boer War and in World War I and for the same purpose by the Australians during World War II. This was because Playfair is reasonably fast to use and requires no special equipment.
+
+
+
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+    <h1>The Playfair Cipher Encryption Algorithm:</h1>
+
+The Algorithm consistes of 2 steps:<br>
+
+Generate the key Square(5×5):<br>
+The key square is a 5×5 grid of alphabets that acts as the key for encrypting the plaintext.Each of the 25 alphabets must be unique and one letter of the alphabet (usually J) is omitted from the table (as the table can hold only 25 alphabets).<br> If the plaintext contains J, then it is replaced by I.
+The initial alphabets in the key square are the unique alphabets of the key in the order in which they appear followed by the remaining letters of the alphabet in order.
+For example:<br>
+
+The key is "monarchy"<br>
+Thus the initial entires are
+'m', 'o', 'n', 'a', 'r', 'c', 'h', 'y'<br>
+followed by remaining characters of <br>
+a-z(except 'j') in that order.<br>
+
+
+Algorithm to encrypt the plain text: The plaintext is split into pairs of two letters (digraphs).
+    <br>If there is an odd number of letters, a Z is added to the last letter.<br>
+<h3>Note:</h3> <strong>Size of plaintext must be even.If not add your own bogus or Dummy character</strong><br>
+PlainText: "instruments"<br>
+    After adding dummy character: "instrumentsz"<br>
+After Split: 'in' 'st' 'ru' 'me' 'nt' 'sz'<br>
+    Another variation<br>
+    Plain Text: "yummy"<br>
+    new plain text will be "yumymy"<br>
+<h4>Hence input must be in paired form from your end!!!!!!!</h4>
+</div>
+
+<br>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Plain Text</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                           <small id="emailHelp" class="form-text text-muted">Size of plaintext must be even.If not add your own bogus or Dummy character</small>
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control" id="key" name='key' placeholder="Enter Key ">
+
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+<div class="container">
+    <h1>The Playfair Cipher Decryption Algorithm:</h1>
+The Algorithm consistes of 2 steps:<br>
+
+Generate the key Square(5×5) at the receiver’s end:
+The key square is a 5×5 grid of alphabets that acts as the key for encrypting the plaintext. Each of the 25 alphabets must be unique and one letter of the alphabet (usually J) is omitted from the table (as the table can hold only 25 alphabets). If the plaintext contains J, then it is replaced by I.
+The initial alphabets in the key square are the unique alphabets of the key in the order in which they appear followed by the remaining letters of the alphabet in order.
+Note: For both encryption and decryption, the same key is to be used.<br>
+
+For example:<br>
+
+The key is "monarchy"<br>
+Thus the initial entires are
+'m', 'o', 'n', 'a', 'r', 'c', 'h', 'y'
+followed by remaining characters of
+a-z(except 'j') in that order.
+
+
+Algorithm to decrypt the ciphertext: The ciphertext is split into pairs of two letters (digraphs).<br>
+    <h3>Note: The ciphertext always have even number of characters.</h3>
+
+For example:
+CipherText: "gatlmzclrqtx"<br>
+After Split: 'ga' 'tl' 'mz' 'cl' 'rq' 'tx'
+
+    </div>
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher Text">
+                          <small id="emaiHelp" class="form-text text-muted">size of cipher text must be even</small>
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="text" class="form-control" id="key1" name='key1' placeholder="Enter Key ">
+
+
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+
+</div>
+{% endblock %}

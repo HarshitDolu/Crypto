@@ -1,0 +1,132 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong> The railfence cipher is an easy to apply transposition cipher that jumbles up the order of the letters of a message in a quick convenient way. It also has the security of a key to make it a little bit harder to break.
+The Rail Fence cipher works by writing your message on alternate lines across the page, and then reading off each line in turn. For example, the plaintext "defend the east wall" is written as shown below, with all spaces removed.
+
+Method to take key:
+In Vernam cipher algorithm, we take a key to encrypt the plain text which length should be equal to the length of the plain text.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+    <h1>How to Encrypt:</h1><br>
+In a transposition cipher, the order of the alphabets is re-arranged to obtain the cipher-text.
+
+In the rail fence cipher, the plain-text is written downwards and diagonally on successive rails of an imaginary fence.<br>
+When we reach the bottom rail, we traverse upwards moving diagonally, after reaching the top rail, the direction is changed again.<br>
+    Thus the alphabets of the message are written in a zig-zag manner.<br>
+After each alphabet has been written, the individual rows are combined to obtain the cipher-text.<br>
+
+
+</div>
+<div class="container">
+    <h1>Example</h1>
+    Plain-Text: HARSHIT JAIN<br>
+    Key: 2<br>
+
+    Cipher Text: HRHTJIASI AN <br>
+
+     Plain-Text: SWARNENDU GANGULI<br>
+     Key: 3<br>
+
+    Cipher Text: SNUNIWRED AGLANGU <br>
+
+
+
+
+</div>
+
+<br>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Plain Text</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="number" class="form-control" id="key" name='key' placeholder="Enter Key number">
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+<div class="container">
+    <h1>How to decrypt:</h1>
+As we’ve seen earlier, the number of columns in rail fence cipher remains equal to the length of plain-text message.<br>
+    And the key corresponds to the number of rails.<br>
+
+Hence, rail matrix can be constructed accordingly. Once we’ve got the matrix we can figure-out the spots where texts should be placed (using the same way of moving diagonally up and down alternatively ).<br>
+Then, we fill the cipher-text row wise. After filling it, we traverse the matrix in zig-zag manner to obtain the original text.<br>
+
+    </div>
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="number" class="form-control" id="key1" name='key1' placeholder="Enter Key number">
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong> Hill cipher is a polygraphic substitution cipher based on linear algebra.Each letter is represented by a number modulo 26. Often the simple scheme A = 0, B = 1, …, Z = 25 is used, but this is not an essential feature of the cipher. To encrypt a message, each block of n letters (considered as an n-component vector) is multiplied by an invertible n × n matrix, against modulus 26. To decrypt the message, each block is multiplied by the inverse of the matrix used for encryption.
+
+
+
+
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+
+    <h1>Example</h1>
+
+Input  : Plaintext: ACT
+         Key: GYBNQKURP <br>
+Output : Ciphertext: POH
+    <br>
+Input  : Plaintext: GFG
+         Key: HILLMAGIC<br>
+Output : Ciphertext: SWK
+
+    <br>
+
+
+    <h3>Note:</h3> This will work for key size 3x3 and plain text,Cipher text of size=3<br>
+    Be careful regarding inputs like if plain text size=3 but key size give to you is 7 or 8...<br>
+    In that case you need to add your dummy character to make it of size=9<br>
+    In case key matrix (3x3)  is provided than You need to first convert it into key text of size 9.
+
+</div>
+
+
+<br>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Plain Text</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+                          <small id="emailHel" class="form-text text-muted">Plain text size must be = 3</small>
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control" id="key" name='key' placeholder="Enter Key">
+                        <small id="emailHelp" class="form-text text-muted">Key size must be = 9</small>
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                       <small id="emaiHel" class="form-text text-muted">cipher text size must be = 3</small>
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="text" class="form-control" id="key1" name='key1' placeholder="Enter Key">
+                                                <small id="emaiHelp" class="form-text text-muted">Key size must be equal to 9</small>
+
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong>The Caesar Cipher is a type of shift cipher. Shift Ciphers work by using the modulo operator to encrypt and decrypt messages. The Shift Cipher has a key K, which is an integer from 0 to 25. We will only share this key with people that we want to see our message.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+    <h1>How to Encrypt:</h1>
+For every letter in the message M :
+<p>1. Convert the letter into the number that matches its order in the alphabet starting from 0, and call this number X.<br>
+( A=0, B=1, C=2, ...,Y=24, Z=25)<br>
+2. Calculate: Y = (X + K) mod 26<br>
+3. Convert the number Y into a letter that matches its order in the alphabet starting from 0.<br>
+(A=0, B=1, C=2, ...,Y=24, Z=25)
+</div>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Plain Text</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="number" class="form-control" id="key" name='key' placeholder="Enter Key number">
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+<div class="container">
+    <h1>How to decrypt:</h1>
+For every letter in the cipher text C :<br>
+1. Convert the letter into the number that matches its order in the alphabet starting from 0, and call this number Y.<br>
+(A=0, B=1, C=2, ..., Y=24, Z=25)<br>
+2. Calculate: X= (Y - K) mod 26<br>
+3. Convert the number X into a letter that matches its order in the alphabet starting from 0.<br>
+(A=0, B=1, C=2, ..., Y=24, Z=25)<br>
+
+    </div>
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="number" class="form-control" id="key1" name='key1' placeholder="Enter Key number">
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+<div class="container">
+    <h1>Why is the Shift Cipher insecure?</h1>
+A cipher should prevent an attacker, who has a copy of the cipher text but does not know the key, <br>from discovering the contents of the message. Since we only <br>have 26 choices for the key, someone can easily try all of the 26 keys, <br>one by one, until they recover the message. This type of attack is called a brute force attack.
+<br>
+    <br>
+</div>
+</div>
+{% endblock %}

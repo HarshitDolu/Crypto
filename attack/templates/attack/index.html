@@ -1,0 +1,25 @@
+{% extends 'attack/home.html' %}
+{% load static %}
+{% block buttons %}
+
+
+  <div class="row">
+
+        <div class="col-lg-9">
+          <h1 class="big-heading">CipherX</h1>
+
+                      <a href="{% url 'kshift' %}" class="btn btn-warning" role="button">K-shift Cipher</a>
+                    <a href="{% url 'vignere' %}" class="btn btn-danger" role="button">Vignere Cipher</a>
+
+                      <a href="{% url 'vernam' %}" class="btn btn-info" role="button">Vernam Cipher</a>
+                    <a href="{% url 'railfence' %}" class="btn btn-success" role="button">RailFence Cipher</a>
+             <a href="{% url 'playfair' %}" class="btn btn-warning" role="button">PlayFair Cipher</a>
+            <a href="{% url 'columnar' %}" class="btn btn-danger" role="button">Columnar Transposition Cipher</a>
+            <a href="{% url 'hill' %}" class="btn btn-info" role="button">Hill Cipher</a>
+
+
+        </div>
+
+  </div>
+
+{% endblock %}

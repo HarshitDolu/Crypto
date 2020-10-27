@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+ <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/X.jpg' %}" rel="icon">
+  <link href="{% static 'assets/img/X.jpg' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha - v2.2.1
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  =====================================-->
+	<title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+
+        <style>
+body {
+  background-image: url({% static 'assets/img/bgg.jpg' %});
+
+}
+</style>
+  </head>
+  <body>
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">CipherX</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="#">Cryptography</a>
+      <a class="nav-item nav-link" href="#">About us</a>
+
+    </div>
+  </div>
+</nav>-->
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/">CipherX</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Encrypt/Decrypt</a></li>
+
+          <li><a href="#team">Developer</a></li>
+           <li><a href="#contact">Feedback</a></li>
+
+
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>A cryptographic system should be secure even if everything about the system, except the key, is public knowledge</h1>
+          <h2><I>— Auguste Kerckhoffs</I></h2>
+
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Cryptography</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Cryptography is technique of securing information and communications through use of codes so that only those person for whom the information is intended can understand it and process it. Thus preventing unauthorized access to information. The prefix “crypt” means “hidden” and suffix graphy means “writing”.
+
+In Cryptography the techniques which are use to protect information are obtained from mathematical concepts and a set of rule based calculations known as algorithms to convert messages in ways that make it hard to decode it.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Confidentiality</li>
+              <li><i class="ri-check-double-line"></i>Integrity</li>
+              <li><i class="ri-check-double-line"></i>Non-repudiation</li>
+               <li><i class="ri-check-double-line"></i>Authentication</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              <strong>Symmetric Key Cryptography:</strong>It is an encryption system where the sender and receiver of message use a single common key to encrypt and decrypt messages. Symmetric Key Systems are faster and simpler but the problem is that sender and receiver have to somehow exchange key in a secure manner.
+              The most popular symmetric key cryptography system is Data Encryption System(DES).<br>
+              <strong>Hash Functions:</strong>There is no usage of any key in this algorithm.
+              A hash value with fixed length is calculated as per the plain text which makes it impossible for contents of plain text to be recovered.<br>
+              <strong>Asymmetric Key Cryptography:</strong>Under this system a pair of keys is used to encrypt and decrypt information.
+              A public key is used for encryption and a private key is used for decryption. Even if the public key is known by everyone the intended receiver can only decode it because he alone knows the private key.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Why Us Section ======= -->
+
+
+    <!-- ======= Skills Section ======= -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Encrypt/Decrypt</h2>
+          <p> CipherX is a tool that contains classical cryptographic algorithms.It allows encryption and decryption features. One needs to select their desired algorithm given below and can encrypt plain text or decrypt cipher text. This will provide accurate results    </p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="{% url 'kshift' %}">K-SHIFT CIPHER</a></h4>
+              <p>K-Shift Cipher is a mono-alphabetic substitution cipher</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="{% url 'vignere' %}">VIGNERE CIPHER</a></h4>
+              <p>  Vignere Cipher is a method of encrypting alphabetic text. It is simply a type of substitution cipher.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="{% url 'vernam' %}">VERNAM CIPHER</a></h4>
+              <p> Vernam Cipher is a method of encrypting alphabetic text. It is simply a type of poly-alphabetic substitution cipher</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="{% url 'railfence' %}">RAIL FENCE CIPHER</a></h4>
+              <p>It is a transposition cipher in which the order of the alphabets is re-arranged to obtain the cipher-text.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+          <div class="container" data-aos="fade-up">
+
+
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-shape-polygon"></i></div>
+              <h4><a href="{% url 'playfair' %}">PLAYFAIR CIPHER</a></h4>
+              <p>The Playfair cipher was the first practical digraph substitution cipher.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-bracket"></i></div>
+              <h4><a href="{% url 'columnar' %}">COLUMNAR CIPHER</a></h4>
+              <p>The columnar transposition cipher is a fairly simple, easy to implement cipher. It is a transposition cipher</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-network-chart"></i></div>
+              <h4><a href="{% url 'hill' %}">HILL CIPHER</a></h4>
+              <p>Hill cipher is a polygraphic substitution cipher based on linear algebra</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-vector"></i></div>
+              <h4><a href="{% url 'sdes' %}">S-DES</a></h4>
+              <p>The process of encrypting a plan text into an encrypted message with the use of S-DES has been divided into multi-steps </p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Developers</h2>
+          <p>Make it work, make it right, make it fast -<b><i>CipherX</i></b></p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="{% static 'assets/img/team/07.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Harshit Jain</h4>
+                <span>Intern @ IIT Bombay, Youtuber</span>
+                <p>B-Tech CSE NIT Agartala</p>
+                <div class="social">
+                  <a href="https://www.youtube.com/channel/UCyW9dCDLcrxJPZoi3ep2hDg"><i class="ri-youtube-fill"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100035035094924"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://github.com/HarshitDolu"><i class="ri-github-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/harshitjain-nita/"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="{% static 'assets/img/team/My_image.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Swarnendu Ganguli</h4>
+                <span>Intern @ Pianalytix</span>
+                <p>B-Tech CSE NIT Agartala</p>
+                <div class="social">
+                  <a href="https://twitter.com/swarnendu_1"><i class="ri-twitter-fill"></i></a>
+                  <a href="https://www.facebook.com/ganguli.swarnendu.25"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://github.com/SwarnenduGanguli25"><i class="ri-github-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/swarnendu-ganguli-b679841b4/"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Pricing Section ======= -->
+
+  <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Feedback</h2>
+          <p>Your Feedback matters us the most, Help improving CIPHERX.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>NIT Agartala, Jirania,Tripura-799046</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>swarnenduganguli@gmail.com</p>
+                 <p>jainharshit9434@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 8018514691</p>
+                 <p>+91 6290348845</p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14597.492949712061!2d91.4214196!3d23.8408767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1c683a298e69e7b!2sNational%20Institute%20of%20Technology%20Agartala!5e0!3m2!1sen!2sin!4v1603305142466!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="#contact" method="post">
+              	{% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validate"></div>
+              </div>
+                     <div class="g-recaptcha" data-sitekey="6Ld3K9oZAAAAAGmejrLNwB6NbZcG5HllaR_waTET"></div>
+              <div class="text-center"><button type="submit" class="btn btn-info" name="sent">Send Message</button></div>
+
+              <br>
+                <div class="container">
+
+                  {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+                  {% endif %}
+                </div>
+            </form>
+
+
+</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+
+  <footer id="footer">
+
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CipherX 2020</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Made with <i class="bx bx-donate-heart"></i> by CipherX Team
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

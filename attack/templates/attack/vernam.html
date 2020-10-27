@@ -1,0 +1,139 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong> Vernam Cipher is a method of encrypting alphabetic text. It is simply a type of substitution cipher. In this mechanism we assign a number to each character of the Plain-Text, like (a = 0, b = 1, c = 2, … z = 25).
+
+Method to take key:
+In Vernam cipher algorithm, we take a key to encrypt the plain text which length should be equal to the length of the plain text.
+
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+    <h1>How to Encrypt:</h1><br>
+1.Assign a number to each character of the plain-text and the key according to alphabetical order.<br>
+2.Add both the number (Corresponding plain-text character number and Key character number).<br>
+3.Subtract the number from 26 if the added number is greater than 26, if it isn’t then leave it.<br>
+
+</div>
+<div class="container">
+    <h1>Example</h1>
+    Plain-Text: RAMSWARUPK<br>
+    Key: RANCHOBABA<br>
+
+    PT:   R  A  M   S   W   A  R   U   P   K<br>
+NO:   17 0  12  18  22  0  17  20  15  10<br>
+
+KEY:  R   A  N   C  H  O   B  A  B  A  <br>
+NO:   17  0  13  2  7  14  1  0  1  0 <br>
+Now add the number of Plain-Text and Key and after doing the addition and subtraction operation (if required), we will get the corresponding Cipher-Text character number.<br>
+
+CT-NO: 34  0  25  20  29  14  18  20  16  10<br>
+In this case, there are two numbers which are greater than the 26 so we have to subtract 26 from them and after applying the subtraction operation the new Cipher text character numbers are as follow:<br>
+
+CT-NO:  8  0  25   20   3   14   18   20   16   10<br>
+New Cipher-Text is after getting the corresponding character from the number.
+
+CIPHER-TEXT: I  A  Z  U  D  O  S  U  Q  K <br>
+    <h3>Note:<br></h3>
+For the Decryption apply the just reverse process of encryption.<br>
+
+</div>
+
+<br>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Plain Text</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control" id="key" name='key' placeholder="Enter Key">
+                        <small id="emailHelp" class="form-text text-muted">Key size must be same as plain text size</small>
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+<div class="container">
+    <h1>How to decrypt:</h1>
+1. Assign a number to each character of the cipher-text and the key according to alphabetical order.<br>
+
+2. Subtract both the number (Corresponding cipher-text character number and Key character number).<br>
+
+3. If the number is negative than add 26, if it isn’t then leave it.<br>
+
+    </div>
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher Text">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="text" class="form-control" id="key1" name='key1' placeholder="Enter Key">
+                                                <small id="emaiHelp" class="form-text text-muted">Key size must be same as cipher text size</small>
+
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+
+</div>
+{% endblock %}

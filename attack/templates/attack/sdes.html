@@ -1,0 +1,159 @@
+{% extends 'attack/navbar.html' %}
+
+{% block body %}
+
+
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey cryptoGeeks!</strong>The overall structure of the simplified DES. The S-DES encryption algorithm takes an 8-bit block of plaintext (example: 10111101) and a 10-bit key as input and produces an 8-bit block of ciphertext as output. The S-DES decryption algorithm takes an 8-bit block of ciphertext and the same 10-bit key used to produce that ciphertext as input and produces the original 8-bit block of plaintext.
+
+
+
+
+
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+<div class="container">
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
+                </div>
+                {% endfor %}
+
+</div>
+
+<div class="container">
+    <h1>Encryption and Decryption contains:</h1><br>
+The encryption algorithm involves five functions:
+
+
+
+an initial permutation (IP)
+
+
+
+a complex function labeled fk, which involves both permutation and substitution operations and depends on a key input
+
+a simple permutation function that switches (SW) the two halves of the data
+
+
+
+the function fk again
+
+
+
+a permutation function that is the inverse of the initial permutation
+
+The function fk takes as input not only the data passing through the encryption algorithm, but also an 8-bit key. Here a 10-bit key is used from which two 8-bit subkeys are generated. The key is first subjected to a permutation (P10). Then a shift operation is performed. The output of the shift operation then passes through a permutation function that produces an 8-bit output (P8) for the first subkey (K1). The output of the shift operation also feeds into another shift and another instance of P8 to produce the second subkey (K2).
+
+
+
+<br>The encryption algorithm can be expressed as a composition composition1 of functions:
+    <br>IP-1 ο fK2 ο SW ο fk1 ο IP
+
+Which can also be written as
+
+
+
+<strong>Ciphertext = IP-1 (fK2 (SW (fk1 (IP (plaintext)))))</strong>
+
+
+
+Where
+
+
+
+K1 = P8 (Shift (P10 (Key)))
+
+
+
+K2 = P8 (Shift (shift (P10 (Key))))
+
+
+
+Decryption can be shown as
+
+
+
+<strong>Plaintext = IP-1 (fK1 (SW (fk2 (IP (ciphertext)))))</strong>
+</div>
+
+
+<br>
+<div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Encryption</h3>
+            <form  action="" method="post">
+				{% csrf_token %}
+
+                     <div class="form-group">
+                        <label for="plaintext">Message</label>
+                         <input type="text" class="form-control" id="plaintext" name="plaintext" placeholder="Enter Plain Text">
+    <small id="emailHel" class="form-text text-muted">message size must be equals to 8</small>
+
+                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control" id="key" name='key' placeholder="Enter Key ">
+                        <small id="emailHelp" class="form-text text-muted">Key size must be equals to 10</small>
+
+                    </div>
+
+
+             <!--   <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Encrypt</button>-->
+
+                 <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="enc">Encrypt</button>
+
+<br>
+
+
+
+
+            </div>
+
+          </div>
+
+
+      <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <br>
+              <h3 class="login-heading mb-4">Decryption</h3>
+
+
+                     <div class="form-group">
+                        <label for="ciphertext">Cipher Text</label>
+                        <input type="text" class="form-control" id="ciphertext" name='ciphertext' placeholder="Enter Cipher ">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                          <small id="emaiHel" class="form-text text-muted">cipher must be equals to 10</small>
+                     </div>
+
+
+
+
+                    <div class="form-group">
+                            <label for="key1">Key</label>
+                            <input type="text" class="form-control" id="key1" name='key1' placeholder="Enter Key">
+                                                <small id="emaiHelp" class="form-text text-muted">Key size must be equals to 10</small>
+
+                     </div>
+
+
+                    <button class="btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="dec">Decrypt</button>
+
+
+            </div>
+
+          </div>
+  </form>
+
+</div>
+{% endblock %}
