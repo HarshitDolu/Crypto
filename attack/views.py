@@ -40,7 +40,7 @@ def home(request):
                 ask.save()
                 messages.success(request, "Hey Cryptogeek, Thank You for your valuable Feedback ")
                 send_mail('CIPHERX',
-                          'Thank You for your valuable Feedback! We really appreciate you taking the time out to share your experience with us. We will reach to you soon'
+                          'Thank You for your valuable Feedback! We really appreciate you taking the time out to share your experience with us. We will reach to you soon.\n Thanks & Regards \n- Cipherx Team.  '
                           , settings.EMAIL_HOST_USER,
                           [email], fail_silently=False
                           )
