@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from .models import contact
+from .models import contact,User
 from django.core.mail import send_mail                                   # mail sending
 from django.conf import settings
 from django.http import HttpResponse
