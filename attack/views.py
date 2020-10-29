@@ -12,6 +12,9 @@ import requests
 import json
 # Home view
 def home(request):
+    num_visits = request.session.get('num_visits', 0);
+    request.session['num_visits'] = num_visits + 1
+    context = {'num_visits': num_visits}
     if request.method=='POST' and 'sent' in request.POST:
         name=request.POST['name']
         email=request.POST['email']
@@ -53,7 +56,7 @@ def home(request):
 
 
 
-    return render(request,'attack/home.html')
+    return render(request,'attack/home.html',context)
 # encrypt function of k-shift cipher
 def remove(string):
     return "".join(string.split())
