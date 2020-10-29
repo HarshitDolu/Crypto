@@ -14,7 +14,29 @@ import json
 def home(request):
     num_visits = request.session.get('num_visits', 0);
     request.session['num_visits'] = num_visits + 1
-    context = {'num_visits': num_visits}
+
+    ### For IP Address
+    def get_ip(request):
+        adress = request.META.get('HTTP_X_FORWARDED_FOR')
+        if adress:
+            ip = adress.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+
+    ip = get_ip(request)
+    u = User(user=ip)
+    result = User.objects.filter(Q(user__icontains=ip))
+    if len(result) == 1:
+        pass
+    elif len(result) > 1:
+        pass
+    else:
+        u.save()
+        # unique user
+    count = User.objects.all().count()
+    context = {'num_visits': num_visits, 'count': count}
+
     if request.method=='POST' and 'sent' in request.POST:
         name=request.POST['name']
         email=request.POST['email']
