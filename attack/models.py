@@ -13,7 +13,4 @@ class contact(models.Model):
         return self.name
 
 
-class User(models.Model):
-    user=models.TextField(default=None)
-    def __str__(self):
-        return self.user
+

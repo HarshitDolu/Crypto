@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from .models import contact,User
+from .models import contact
 from django.core.mail import send_mail                                   # mail sending
 from django.conf import settings
 from django.http import HttpResponse
@@ -13,30 +13,28 @@ import requests
 import json
 # Home view
 def home(request):
-    num_visits = request.session.get('num_visits', 0);
-    request.session['num_visits'] = num_visits + 1
 
     ### For IP Address
-    def get_ip(request):
-        adress = request.META.get('HTTP_X_FORWARDED_FOR')
-        if adress:
-            ip = adress.split(',')[-1].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-        return ip
+   # def get_ip(request):
+       # adress = request.META.get('HTTP_X_FORWARDED_FOR')
+        #if adress:
+         #   ip = adress.split(',')[-1].strip()
+        #else:
+         #   ip = request.META.get('REMOTE_ADDR')
+        #return ip
 
-    ip = get_ip(request)
-    u = User(user=ip)
-    result = User.objects.filter(Q(user__icontains=ip))
-    if len(result) == 1:
-        pass
-    elif len(result) > 1:
-        pass
-    else:
-        u.save()
+    #ip = get_ip(request)
+    #u = User(user=ip)
+    #result = User.objects.filter(Q(user__icontains=ip))
+    #if len(result) == 1:
+     #   pass
+    #elif len(result) > 1:
+     #   pass
+    #else:
+    #    u.save()
         # unique user
-    count = User.objects.all().count()
-    context = {'num_visits': num_visits, 'count': count}
+    #count = User.objects.all().count()
+    #context = {'num_visits': num_visits, 'count': count}
 
     if request.method=='POST' and 'sent' in request.POST:
         name=request.POST['name']
