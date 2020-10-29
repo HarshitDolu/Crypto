@@ -77,7 +77,7 @@ def home(request):
 
 
 
-    return render(request,'attack/home.html',context)
+    return render(request,'attack/home.html')
 # encrypt function of k-shift cipher
 def remove(string):
     return "".join(string.split())
